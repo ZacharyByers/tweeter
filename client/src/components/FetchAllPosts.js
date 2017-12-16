@@ -18,6 +18,7 @@ class FetchAllUsers extends React.Component {
   }
 
   displayPosts = () => {
+<<<<<<< HEAD
     const { posts, user } = this.props
     if(user){
       if(posts.length > 0) {
@@ -36,6 +37,16 @@ class FetchAllUsers extends React.Component {
           </Dimmer>
         )
       }
+=======
+    const { posts } = this.props
+    if(posts.length > 0)
+      return posts.map( (post, i) =>
+        <Card key={i}>
+          { post.content }
+        </Card>
+      )
+    return<Header as='h3'>{`This user doesn't have any posts yet.`}</Header>
+>>>>>>> origin/Josh
   }
 
   checkUser = (userId, pageId) => {
