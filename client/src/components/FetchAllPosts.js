@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Route } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import Home from './Home'
 import { Card, Loader, Segment, Dimmer, Header } from 'semantic-ui-react'
 import { getPosts } from '../actions/posts'
@@ -17,10 +17,10 @@ class FetchAllUsers extends React.Component {
   }
 
   displayPosts = () => {
-    const { posts } = this.props
+    const { user, posts } = this.props
     if(posts.length > 0)
       return posts.map( (post, i) =>
-        <Card key={i}>
+        <Card key={i} as={Link} to={`/users/${user.id}/posts/${post.id}`}>
           { post.content }
         </Card>
       )
