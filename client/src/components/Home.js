@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
-import { Header,Segment, Image, Icon, Feed } from 'semantic-ui-react';
+import { Header, Segment, Image, Icon, Feed } from 'semantic-ui-react';
+import { connect } from 'react-redux'
+import { getUsers } from '../actions/users'
 
 class Home extends Component {
+
+  state = { users: [] }
+
+  componentDidMount() {
+    this.props.dispatch( getUsers() )
+
+  }
+
   render() {
     return (
       <Segment>
@@ -111,4 +121,8 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = ( state ) => {
+  return { users: state.users }
+}
+
+export default connect(mapStateToProps)(Home);

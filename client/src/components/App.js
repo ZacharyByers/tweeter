@@ -10,7 +10,9 @@ import MyComments from './MyComments'
 import ProtectedRoute from './ProtectedRoute';
 import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
+import FetchAllUsers from './FetchAllUsers'
 import { Switch, Route } from 'react-router-dom';
+import FetchAllPosts from './FetchAllPosts';
 
 class App extends Component {
   render() {
@@ -20,9 +22,9 @@ class App extends Component {
         <Flash />
         <FetchUser>
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/mypage' component={MyPage} />
-            <Route exact path='/mycomments' component={MyComments} />
+            <Route path='/users' component={FetchAllUsers} />
+            <ProtectedRoute exact path='/mypage' component={MyPage} />
+            <ProtectedRoute exact path='/mycomments' component={MyComments} />
             <AuthRoute exact path='/login' component={Login} />
             <AuthRoute exact path='/register' component={Register} />
             <Route component={NoMatch} />
