@@ -5,6 +5,7 @@ import Home from './Home'
 import UserPage from './UserPage'
 import { Card, Loader, Segment, Dimmer } from 'semantic-ui-react'
 import { getPosts } from '../actions/posts'
+import PostForm from './PostForm'
 
 class FetchAllUsers extends React.Component {
 
@@ -27,6 +28,7 @@ class FetchAllUsers extends React.Component {
     const { user } = this.props
     return(
       <Segment basic>
+      <PostForm />
         <h1>All posts:</h1><br/>
         { this.displayPosts() }
       </Segment>

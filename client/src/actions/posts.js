@@ -19,12 +19,12 @@ export const showPost = (userId, postId) => {
 
 export const newPost = (userId, post) => {
   return ( dispatch ) => {
-    axios.post(`/api/users/${userId}/posts`, { ...post })
+    axios.post(`/api/users/${userId}/posts`, {content: post} )
       .then ( res => {
-        dispatch(setHeaders(res.headers))
+        dispatch(setHeaders(res.headers)),
         dispatch({ type: "NEW_POST", post: res.data })
-      .catch( err => console.log(err))
       })
+      .catch( err => console.log(err))
   }
 }
 
