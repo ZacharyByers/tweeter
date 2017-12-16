@@ -12,6 +12,7 @@ import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
 import FetchAllUsers from './FetchAllUsers'
 import { Switch, Route } from 'react-router-dom';
+import FetchAllPosts from './FetchAllPosts';
 
 class App extends Component {
   render() {

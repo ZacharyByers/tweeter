@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { setHeaders } from './headers';
 
 export const getPosts = (userId) => {
   return ( dispatch ) => {
