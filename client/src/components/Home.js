@@ -117,8 +117,11 @@ class Home extends Component {
   </Feed>
       </div>
       </Segment>
+
+      
     );
   }
+  
 }
 
 const mapStateToProps = ( state ) => {
