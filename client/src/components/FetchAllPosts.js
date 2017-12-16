@@ -5,6 +5,7 @@ import Home from './Home'
 import UserPage from './UserPage'
 import { Card, Loader, Segment, Dimmer, Header } from 'semantic-ui-react'
 import { getPosts } from '../actions/posts'
+import PostForm from './PostForm'
 
 class FetchAllUsers extends React.Component {
 
