@@ -5,6 +5,7 @@ import Home from './Home'
 import { Card, Loader, Segment, Dimmer, Header } from 'semantic-ui-react'
 import { getPosts } from '../actions/posts'
 import PostForm from './PostForm'
+import { Link } from 'react-router-dom'
 
 class FetchAllUsers extends React.Component {
 
@@ -20,15 +21,9 @@ class FetchAllUsers extends React.Component {
     const { posts, user } = this.props
     if(user){
       if(posts.length > 0) {
-<<<<<<< HEAD
-        
+
         return posts.map( (post, i) =>
           <Card key={i}>
-=======
-        return posts.map( (post, i) =>
-          <Card key={i}>
-            { i + 1 }: {" "}
->>>>>>> single post and links to
             <Link to={`/users/${user.id}/posts/${post.id}`}>{ post.content }</Link>
           </Card>
         )
@@ -41,7 +36,6 @@ class FetchAllUsers extends React.Component {
           </Dimmer>
         )
       }
-<<<<<<< HEAD
   }
 
   checkUser = (userId, pageId) => {
@@ -50,13 +44,11 @@ class FetchAllUsers extends React.Component {
         this.setState({ renderNew: true })
       }
     }
-=======
->>>>>>> single post and links to
   }
 
   render() {
     const { user, pageId } = this.props
-    let email = pageId ? pageId.email : ''
+    let email = user ? user.email : ''
     if( this.state.renderNew )
       return(
         <Segment basic>

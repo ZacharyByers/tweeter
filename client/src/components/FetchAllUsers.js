@@ -9,7 +9,8 @@ import FetchAllPosts from './FetchAllPosts';
 <<<<<<< HEAD
 import PostPage from './PostPage';
 =======
->>>>>>> single post and links to
+import PostPage from './PostPage';
+>>>>>>> tweak
 import SinglePost from './SinglePost'
 
 class FetchAllUsers extends React.Component {
