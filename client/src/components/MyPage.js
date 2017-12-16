@@ -6,6 +6,8 @@ class MyPage extends Component {
   render() {
     return (
       <Header as='h1' textAlign='center'>My Page</Header>
+
+      
     )
   }
 
