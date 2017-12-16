@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { deletePost } from '../actions/posts'
-import { Button, Container, Segment } from 'semantic-ui-react'
+import { Button, Container, Grid, Segment } from 'semantic-ui-react'
 
 class PostPage extends React.Component {
 
@@ -14,14 +14,16 @@ class PostPage extends React.Component {
     const { post } = this.props
     if(post)
       return(
-        <Container>
+        <Grid centered>
+          <Grid.Column width={8}>
           <Segment textAlign="center">
             { post.content }<br/>
           </Segment>
-            <Button size="mini" color="red" 
+            <Button size="mini" color="red" floated="right" 
               onClick={() => this.destroyPost()}>Delete
             </Button>
-        </Container>
+          </Grid.Column>
+        </Grid>
       )
     else
       return null
