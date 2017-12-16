@@ -5,7 +5,6 @@ import Home from './Home'
 import { Card, Loader, Segment, Dimmer, Header } from 'semantic-ui-react'
 import { getPosts } from '../actions/posts'
 import PostForm from './PostForm'
-import { Link } from 'react-router-dom'
 
 class FetchAllUsers extends React.Component {
 
@@ -21,9 +20,9 @@ class FetchAllUsers extends React.Component {
     const { posts, user } = this.props
     if(user){
       if(posts.length > 0) {
+        
         return posts.map( (post, i) =>
           <Card key={i}>
-            { i + 1 }: {" "}
             <Link to={`/users/${user.id}/posts/${post.id}`}>{ post.content }</Link>
           </Card>
         )
