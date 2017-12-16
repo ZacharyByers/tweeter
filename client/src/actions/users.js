@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getUsers = () => {
   return ( dispatch ) => {
-    axios.get("api/users")
+    axios.get("/api/users")
       .then( res => dispatch({ type: "GET_USERS", users: res.data }))
       .catch ( err => console.log(err) )
   }
