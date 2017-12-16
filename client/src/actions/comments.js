@@ -10,12 +10,12 @@ export const getComments = (postId) => {
 
 export const newComment = (postId, comment) => {
   return ( dispatch ) => {
-    axios.post(`/api/posts/${postID}/comments`, { ...comment } )
+    axios.post(`/api/posts/${postId}/comments`, { ...comment } )
       .then ( res => {
         dispatch(setHeaders(res.headers))
         dispatch({ type: "NEW_COMMENT", comment: res.data})
       .catch( err => console.log(err))
-        
+
       })
   }
 }
