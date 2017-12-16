@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Segment, Header, Dimmer, Loader } from 'semantic-ui-react'
+import { Segment, Header } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Bio from './Bio'
