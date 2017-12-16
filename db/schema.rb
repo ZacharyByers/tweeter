@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171216165453) do
-=======
 ActiveRecord::Schema.define(version: 20171216165847) do
->>>>>>> Zach
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,19 +24,6 @@ ActiveRecord::Schema.define(version: 20171216165847) do
     t.index ["user_id"], name: "index_bios_on_user_id"
   end
 
-<<<<<<< HEAD
-=======
-  create_table "comments", force: :cascade do |t|
-    t.text "message", null: false
-    t.bigint "user_id"
-    t.bigint "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
->>>>>>> Zach
   create_table "posts", force: :cascade do |t|
     t.text "content", null: false
     t.bigint "user_id"
@@ -79,10 +62,5 @@ ActiveRecord::Schema.define(version: 20171216165847) do
   end
 
   add_foreign_key "bios", "users"
-<<<<<<< HEAD
-=======
-  add_foreign_key "comments", "posts"
-  add_foreign_key "comments", "users"
->>>>>>> Zach
   add_foreign_key "posts", "users"
 end
