@@ -1,12 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Segment, Header, Dimmer, Loader } from 'semantic-ui-react'
+import axios from 'axios'
+import Bio from './Bio'
 
-class UserPage extends React.Component {
-  render() {
+
+const UserPage = ({ user }) => {
+  if(user)
     return(
-      <div>User Page</div>
+      <Segment basic align='center'>
+        <Header as='h2'>{user.email}</Header>
+        <Bio userId={user.id} />
+      </Segment>
     )
-  }
+  else
+    return(
+      <Dimmer>
+        <Loader>Loading User</Loader>
+      </Dimmer>
+    )
 }
 
 const mapStateToProps = (state, props) => {
