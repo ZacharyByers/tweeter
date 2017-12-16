@@ -7,6 +7,7 @@ import Flash from './Flash';
 import Home from './Home';
 import MyPage from './MyPage'
 import MyComments from './MyComments'
+import Footer from './Footer'
 import ProtectedRoute from './ProtectedRoute';
 import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
@@ -22,11 +23,7 @@ class App extends Component {
         <Flash />
         <FetchUser>
           <Switch>
-
-           
-
             <Route exact path='/' component={Home} />
-
             <Route path='/users' component={FetchAllUsers} />
             <ProtectedRoute exact path='/mypage' component={MyPage} />
             <ProtectedRoute exact path='/mycomments' component={MyComments} />
@@ -35,6 +32,7 @@ class App extends Component {
             <Route component={NoMatch} />
           </Switch>
         </FetchUser>
+        <Footer />
       </div>
     );
   }
