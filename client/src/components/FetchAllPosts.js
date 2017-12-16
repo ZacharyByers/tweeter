@@ -5,7 +5,6 @@ import Home from './Home'
 import { Card, Loader, Segment, Dimmer, Header } from 'semantic-ui-react'
 import { getPosts } from '../actions/posts'
 import PostForm from './PostForm'
-import { Link } from 'react-router-dom'
 
 class FetchAllUsers extends React.Component {
 
