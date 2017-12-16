@@ -1,24 +1,17 @@
-# README
+# Get Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Clone the repo and run ```bundle install && yarn install```
 
-Things you may want to cover:
+* run ```bundle exec rails s -p 3001```
 
-* Ruby version
+* run ```cd client && yarn start```
 
-* System dependencies
+* Happy Tweeting!
 
-* Configuration
-
-* Database creation
-
-* Database initialization
+<!-- * Database creation
 
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+* Deployment instructions -->
