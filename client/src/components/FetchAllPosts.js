@@ -21,7 +21,6 @@ class FetchAllUsers extends React.Component {
     if(posts.length > 0)
       return posts.map( (post, i) =>
         <Card key={i}>
-          { i + 1 }: {" "}
           { post.content }
         </Card>
       )
