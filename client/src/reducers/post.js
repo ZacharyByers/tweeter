@@ -5,7 +5,7 @@ const posts = (state = [], action) => {
     case 'SHOW_POST':
       return action.post;
     case 'NEW_POST':
-      return [ ...state, action.post ]
+      return [ action.post, ...state ]
     case 'UPDATE_POST':
       return [ ...state, action.post ]
     case 'DELETE_POST':
