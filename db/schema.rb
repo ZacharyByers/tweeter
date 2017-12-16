@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20171216165847) do
     t.index ["user_id"], name: "index_bios_on_user_id"
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text "message", null: false
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text "content", null: false
     t.bigint "user_id"
@@ -62,5 +72,7 @@ ActiveRecord::Schema.define(version: 20171216165847) do
   end
 
   add_foreign_key "bios", "users"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "posts", "users"
 end
