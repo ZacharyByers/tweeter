@@ -22,6 +22,7 @@ class App extends Component {
         <Flash />
         <FetchUser>
           <Switch>
+            <Route path='/' component={Home} />
             <Route path='/users' component={FetchAllUsers} />
             <ProtectedRoute exact path='/mypage' component={MyPage} />
             <ProtectedRoute exact path='/mycomments' component={MyComments} />
