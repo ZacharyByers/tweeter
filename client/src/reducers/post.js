@@ -7,9 +7,10 @@ const posts = (state = [], action) => {
     case 'NEW_POST':
       return [ action.post, ...state ]
     case 'UPDATE_POST':
+      console.log("hit update")
       return [ ...state, action.post ]
     case 'DELETE_POST':
-      return state
+      return state.filter( p => p.id !== action.id )
     default:
       return state;
   }

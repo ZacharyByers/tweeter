@@ -39,7 +39,7 @@ export const updatePost = (userId, post) => {
 export const deletePost = (userId, post) => {
   return ( dispatch ) => {
     axios.delete(`/api/users/${userId}/posts/${post.id}`, { post })
-      .then( res => dispatch({ type: "DELETE_POST", post: res.data }) )
+      .then( res => dispatch({ type: "DELETE_POST", post: post.id }) )
       .catch( err => console.log( err ))
   }
 }
