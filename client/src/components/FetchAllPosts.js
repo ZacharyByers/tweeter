@@ -48,7 +48,7 @@ class FetchAllUsers extends React.Component {
 
   render() {
     const { user, pageId } = this.props
-    let email = user ? user.email : ''
+    let email = pageId ? pageId.email : ''
     if( this.state.renderNew )
       return(
         <Segment basic>
