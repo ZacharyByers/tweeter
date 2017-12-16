@@ -1,14 +1,14 @@
-# Get Started:
+# Get Started
 
-* Clone the repo and run ```bundle install & yarn install```
+* Clone the repo and run ```bundle install && yarn install```
 
 * run ```bundle exec rails s -p 3001```
 
-* run ```cd client & yarn start```
+* run ```cd client && yarn start```
+
+* Happy Tweeting!
 
 <!-- * Database creation
-
-* Database initialization
 
 * How to run the test suite
 
