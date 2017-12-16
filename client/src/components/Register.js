@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Form, Button, Segment } from 'semantic-ui-react';
+import { Header, Form, Button, Segment, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { registerUser } from '../actions/auth';
 import { setFlash } from '../actions/flash';
@@ -28,6 +28,7 @@ class Register extends Component {
     const { email, password, passwordConfirmation } = this.state;
 
     return (
+      <Grid padded>
       <Segment basic>
         <Header as='h1' textAlign='center'>Register Component</Header>
         <Form onSubmit={this.handleSubmit}>
@@ -64,10 +65,11 @@ class Register extends Component {
             />
           </Form.Field>
           <Segment basic textAlign='center'>
-            <Button type='submit'>Submit</Button>
+            <Button color='blue' type='submit'>Submit</Button>
           </Segment>
         </Form>
       </Segment>
+      </Grid>
     );
   }
 }
