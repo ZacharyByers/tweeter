@@ -18,16 +18,6 @@ class FetchAllUsers extends React.Component {
   }
 
   displayPosts = () => {
-<<<<<<< HEAD
-    const { user, posts } = this.props
-    if(posts.length > 0)
-      return posts.map( (post, i) =>
-        <Card key={i} as={Link} to={`/users/${user.id}/posts/${post.id}`}>
-          { post.content }
-        </Card>
-      )
-    return<Header as='h3'>{`This user doesn't have any posts yet.`}</Header>
-=======
     const { posts, user } = this.props
     if(user){
       if(posts.length > 0) {
@@ -46,7 +36,6 @@ class FetchAllUsers extends React.Component {
           </Dimmer>
         )
       }
->>>>>>> single post and links to
   }
 
   checkUser = (userId, pageId) => {
@@ -59,7 +48,7 @@ class FetchAllUsers extends React.Component {
 
   render() {
     const { user, pageId } = this.props
-    let email = pageId ? pageId.email : ''
+    let email = user ? user.email : ''
     if( this.state.renderNew )
       return(
         <Segment basic>
