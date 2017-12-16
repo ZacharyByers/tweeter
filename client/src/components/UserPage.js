@@ -24,8 +24,12 @@ const UserPage = ({ user }) => {
 }
 
 const mapStateToProps = (state, props) => {
-  const user = state.users.find( u => u.id == props.match.params.id)
-  return { user }
+
+  if(props.match) {
+    const user = state.users.find( u => u.id == props.match.params.id)
+    return { user }
+  }
+  return { user: state.user}
 }
 
 export default connect(mapStateToProps)(UserPage)
