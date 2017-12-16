@@ -74,6 +74,14 @@ class NavBar extends Component {
             </Menu.Item>
               </Link>
             </Button>
+            <Button>
+              <Link to='/users'>
+              <Menu.Item name='users'>
+              <Icon name='users' />
+              Users
+              </Menu.Item>
+              </Link>
+            </Button>
           </Button.Group>
           { this.rightNavs() }
         </Menu>
