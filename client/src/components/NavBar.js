@@ -47,7 +47,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        
+
         <Menu pointing secondary>
           <Button.Group compact color='blue'>
             <Button>
@@ -58,15 +58,15 @@ class NavBar extends Component {
             </Menu.Item>
               </Link>
             </Button>
-            <Button>  
-              < Link to='/mypage'>
-              <Menu.Item name='id badge'>
+            <Button>
+              <Link to='/mypage'>
+                <Menu.Item name='id badge'>
               <Icon name='id badge' />
               My Page
             </Menu.Item>
               </Link>
             </Button>
-            <Button>  
+            <Button>
               <Link to='mycomments'>
               <Menu.Item name='comment'>
               <Icon name='comment' />
