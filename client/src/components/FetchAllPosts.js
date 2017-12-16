@@ -5,6 +5,7 @@ import Home from './Home'
 import { Card, Loader, Segment, Dimmer, Header } from 'semantic-ui-react'
 import { getPosts } from '../actions/posts'
 import PostForm from './PostForm'
+import { Link } from 'react-router-dom'
 
 class FetchAllUsers extends React.Component {
 
@@ -17,14 +18,24 @@ class FetchAllUsers extends React.Component {
   }
 
   displayPosts = () => {
-    const { user, posts } = this.props
-    if(posts.length > 0)
-      return posts.map( (post, i) =>
-        <Card key={i} as={Link} to={`/users/${user.id}/posts/${post.id}`}>
-          { post.content }
-        </Card>
-      )
-    return<Header as='h3'>{`This user doesn't have any posts yet.`}</Header>
+    const { posts, user } = this.props
+    if(user){
+      if(posts.length > 0) {
+        return posts.map( (post, i) =>
+          <Card key={i}>
+            { i + 1 }: {" "}
+            <Link to={`/users/${user.id}/posts/${post.id}`}>{ post.content }</Link>
+          </Card>
+        )
+      }
+      return<Header as='h3'>{`This user doesn't have any posts yet.`}</Header>
+    } else {
+        return(
+          <Dimmer>
+            <Loader>Loading User</Loader>
+          </Dimmer>
+        )
+      }
   }
 
   checkUser = (userId, pageId) => {

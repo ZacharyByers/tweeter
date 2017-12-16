@@ -14,6 +14,7 @@ class Home extends Component {
 
   render() {
     return (
+      
       <Segment>
       <Header color='blue' as='h1' textAlign='center'>Tweeter</Header>
       <div>
@@ -31,7 +32,7 @@ class Home extends Component {
       </Feed.Label>
       <Feed.Content>
         <Feed.Summary>
-          <Feed.User>Elliot Fu</Feed.User> added you as a friend
+          <Feed.User>Chris L.</Feed.User> added you as a friend
           <Feed.Date>1 Hour Ago</Feed.Date>
         </Feed.Summary>
         <Feed.Meta>
@@ -47,7 +48,7 @@ class Home extends Component {
       <Feed.Label image='/assets/images/avatar/small/helen.jpg' />
       <Feed.Content>
         <Feed.Summary>
-          <a>Helen Troy</a> added <a>2 new illustrations</a>
+          <a>Zach B.</a> added <a>2 new illustrations</a>
           <Feed.Date>4 days ago</Feed.Date>
         </Feed.Summary>
         <Feed.Extra images>
@@ -65,7 +66,7 @@ class Home extends Component {
     <Feed.Event>
       <Feed.Label image='/assets/images/avatar/small/jenny.jpg' />
       <Feed.Content>
-        <Feed.Summary date='2 Days Ago' user='Jenny Hess' content='add you as a friend' />
+        <Feed.Summary date='2 Days Ago' user='MA' content=' add you as a friend' />
         <Feed.Meta>
           <Feed.Like>
             <Icon name='like' />
@@ -79,7 +80,7 @@ class Home extends Component {
       <Feed.Label image='/assets/images/avatar/small/joe.jpg' />
       <Feed.Content>
         <Feed.Summary>
-          <a>Joe Henderson</a> posted on his page
+          <a>Josh M.</a> posted on his page
           <Feed.Date>3 days ago</Feed.Date>
         </Feed.Summary>
         <Feed.Extra text>
@@ -99,7 +100,7 @@ class Home extends Component {
       <Feed.Label image='/assets/images/avatar/small/justen.jpg' />
       <Feed.Content>
         <Feed.Summary>
-          <a>Justen Kitsune</a> added <a>2 new photos</a> of you
+          <a>Aaron W. </a> added <a>2 new photos</a> of you
           <Feed.Date>4 days ago</Feed.Date>
         </Feed.Summary>
         <Feed.Extra images>
