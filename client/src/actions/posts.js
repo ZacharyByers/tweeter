@@ -21,8 +21,24 @@ export const newPost = (userId, post) => {
     axios.post(`/api/users/${userId}/posts`, { ...post })
       .then ( res => {
         dispatch(setHeaders(res.headers))
-        dispatch({ type: "NEW_POST", post: res.data})
+        dispatch({ type: "NEW_POST", post: res.data })
       .catch( err => console.log(err))
       })
+  }
+}
+
+export const updatePost = (userId, post) => {
+  return ( dispatch ) => {
+    axios.put(`/api/users/${userId}/posts/${post.id}`, { post })
+      .then( res => dispatch({ type: "UPDATE_POST", post: res.data }) )
+      .catch( err => console.log( err ))
+  }
+}
+
+export const deletePost = (userId, post) => {
+  return ( dispatch ) => {
+    axios.delete(`/api/users/${userId}/posts/${post.id}`, { post })
+      .then( res => dispatch({ type: "DELETE_POST", post: res.data }) )
+      .catch( err => console.log( err ))
   }
 }

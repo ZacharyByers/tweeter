@@ -6,6 +6,10 @@ const posts = (state = [], action) => {
       return action.post;
     case 'NEW_POST':
       return [ ...state, action.post ]
+    case 'UPDATE_POST':
+      return [ ...state, action.post ]
+    case 'DELETE_POST':
+      return state
     default:
       return state;
   }

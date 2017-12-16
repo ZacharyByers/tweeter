@@ -19,14 +19,3 @@ export const newComment = (postId, comment) => {
       })
   }
 }
-
-// export const newPost = (userId, post) => {
-//   return ( dispatch ) => {
-//     axios.post(`/api/users/${userId}/posts`, { ...post })
-//       .then ( res => {
-//         dispatch(setHeaders(res.headers))
-//         dispatch({ type: "NEW_POST", post: res.data})
-//       .catch( err => console.log(err))
-//       })
-//   }
-// }
