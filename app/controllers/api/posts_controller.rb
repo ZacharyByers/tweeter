@@ -3,7 +3,7 @@ class Api::PostsController < ApplicationController
   before_action :set_post, except: [:index, :create]
 
   def index
-    render json: @user.posts
+    render json: @user.posts.order("id DESC")
   end
 
   def show
