@@ -7,6 +7,7 @@ import Accept from './Accept'
 import axios from 'axios'
 
 class MyPage extends Component {
+  state = { editing: false, profile_image: '', description: '' }
 
   isEditing = () => {
     const { id } = this.props.user
@@ -36,13 +37,51 @@ class MyPage extends Component {
     }
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const { id } = this.props.user
+    const { profile_image, description, noBio } = this.state
+    const bio = { profile_image, description }
+    if(noBio) {
+      axios.post(`/api/users/${id}/bio`, { bio })
+      .then( res => this.setState({ editing: false, profile_image: '', description: '', noBio: false }) )
+      .catch( err => console.log(err))
+    }
+    else {
+      axios.put(`/api/users/${id}/bio`, { bio })
+        .then( res => this.setState({ editing: false, profile_image: '', description: ''}) )
+        .catch( err => console.log(err))
+    }
+  }
 
-    )
+  handleChange = (e, {name, value}) => this.setState({ [name]: value })
+
+  getBio = () => {
+    axios.get(`/api/users/${this.props.user.id}/bio`)
+      .then( res => {
+        const { profile_image, description } = res.data
+        this.setState({ profile_image, description })
+      })
+      .catch( () => this.setState({ noBio: true }) )
+  }
+
+  render() {
+    const { editing } = this.state
+    if(!editing)
+      return (
+        <Segment basic align='center'>
+          <Button primary onClick={ () => this.setState({ editing: true }) }>Edit Bio</Button>
+          <UserPage />
+        </Segment>
+      )
+    else
+      return this.isEditing()
   }
 
 }
 
+const mapStateToProps = (state) =>{
+  return { user: state.user }
+}
 
-
-
-export default MyPage;
+export default connect(mapStateToProps)(MyPage);

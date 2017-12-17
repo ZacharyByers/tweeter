@@ -6,11 +6,7 @@ import UserPage from './UserPage'
 import { Loader, Segment, Dimmer } from 'semantic-ui-react'
 import { getUsers } from '../actions/users'
 import FetchAllPosts from './FetchAllPosts';
-<<<<<<< HEAD
 import PostPage from './PostPage';
-=======
-import PostPage from './PostPage';
->>>>>>> tweak
 import SinglePost from './SinglePost'
 
 class FetchAllUsers extends React.Component {
